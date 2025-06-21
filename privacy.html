@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Privacy Policy – Wallio</title>
+  <style>
+    /* VARIABLES */
+    :root {
+      --dark-bg: #0a0a1a;
+      --light-bg: #ffffff;
+      --accent-purple: #8b5cf6;
+      --accent-blue: #4f46e5;
+      --accent-pink: #ec4899;
+      --text-light: #f8fafc;
+      --text-dark: #1e293b;
+      --text-secondary: #64748b;
+      --glass-bg: rgba(255, 255, 255, 0.1);
+      --glass-border: rgba(255, 255, 255, 0.2);
+      --max-width: 800px;
+      --section-padding: clamp(2rem, 5vw, 4rem);
+    }
+
+    * { 
+      box-sizing: border-box; 
+      margin: 0; 
+      padding: 0; 
+    }
+
+    html, body { 
+      scroll-behavior: smooth; 
+      overflow-x: hidden;
+    }
+
+    body { 
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", system-ui, sans-serif; 
+      color: var(--text-dark); 
+      background: var(--light-bg);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* HEADER */
+    .header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      position: relative;
+      padding: 3rem 1rem 4rem;
+      text-align: center;
+      color: white;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 80%, rgba(139, 92, 246, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(79, 70, 229, 0.3) 0%, transparent 50%);
+      animation: float 20s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      33% { transform: translateY(-10px) rotate(0.5deg); }
+      66% { transform: translateY(5px) rotate(-0.5deg); }
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 2;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .logo {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 1.5rem;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 24px rgba(139, 92, 246, 0.3);
+    }
+
+    .logo-image {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 12px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255, 255, 255, 0.9);
+      text-decoration: none;
+      font-weight: 500;
+      margin-bottom: 2rem;
+      transition: all 0.3s ease;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+    }
+
+    .back-link:hover {
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateX(-2px);
+    }
+
+    .header h1 {
+      font-size: clamp(2.5rem, 6vw, 3.5rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .header .subtitle {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.9);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    /* MAIN CONTENT */
+    .main-content {
+      padding: var(--section-padding) 1rem;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .last-updated {
+      background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+      border: 1px solid #cbd5e1;
+      border-radius: 12px;
+      padding: 1rem 1.5rem;
+      margin-bottom: 3rem;
+      text-align: center;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    .privacy-highlights {
+      background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+      border: 1px solid #86efac;
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .privacy-highlights h3 {
+      color: #059669;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .highlight-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 500;
+      color: #047857;
+    }
+
+    .highlight-icon {
+      font-size: 1.2rem;
+    }
+
+    .section {
+      margin-bottom: 3rem;
+    }
+
+    .section h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--accent-purple);
+      position: relative;
+    }
+
+    .section h2::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: var(--accent-blue);
+    }
+
+    .section h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin: 2rem 0 1rem;
+    }
+
+    .section p {
+      margin-bottom: 1.5rem;
+      color: var(--text-dark);
+      font-size: 1rem;
+    }
+
+    .section ul {
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+    }
+
+    .section li {
+      margin-bottom: 0.8rem;
+      color: var(--text-dark);
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    }
+
+    .data-table th,
+    .data-table td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .data-table th {
+      background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+      color: white;
+      font-weight: 600;
+    }
+
+    .data-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .contact-info {
+      background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 2rem;
+      margin-top: 3rem;
+      text-align: center;
+    }
+
+    .contact-info h3 {
+      color: var(--accent-purple);
+      margin-bottom: 1rem;
+    }
+
+    .contact-info a {
+      color: var(--accent-blue);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .contact-info a:hover {
+      color: var(--accent-purple);
+    }
+
+    .rights-section {
+      background: linear-gradient(135deg, #fef3c7, #fde68a);
+      border: 1px solid #f59e0b;
+      border-radius: 16px;
+      padding: 2rem;
+      margin: 2rem 0;
+    }
+
+    .rights-section h3 {
+      color: #d97706;
+      margin-bottom: 1rem;
+    }
+
+    .rights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .right-item {
+      background: rgba(255, 255, 255, 0.7);
+      padding: 1rem;
+      border-radius: 8px;
+      border-left: 4px solid #f59e0b;
+    }
+
+    .right-item h4 {
+      color: #92400e;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .right-item p {
+      font-size: 0.9rem;
+      color: #78350f;
+      margin-bottom: 0;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #0f172a;
+      color: #64748b;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 4rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-links a {
+      color: #94a3b8;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .header {
+        padding: 2rem 1rem 3rem;
+      }
+
+      .footer-links {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .contact-info,
+      .privacy-highlights,
+      .rights-section {
+        padding: 1.5rem;
+      }
+
+      .data-table {
+        font-size: 0.9rem;
+      }
+
+      .data-table th,
+      .data-table td {
+        padding: 0.8rem;
+      }
+
+      .highlights-grid,
+      .rights-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      :root {
+        --section-padding: 1.5rem;
+      }
+
+      .section h2 {
+        font-size: 1.5rem;
+      }
+
+      .section h3 {
+        font-size: 1.2rem;
+      }
+
+      .data-table {
+        font-size: 0.8rem;
+      }
+
+      .data-table th,
+      .data-table td {
+        padding: 0.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-content">
+    <h1>Privacy Policy</h1>
+    <p class="subtitle">Your privacy matters. Learn how we protect and use your information.</p>
+  </div>
+</header>
+
+<main class="main-content">
+  <div class="last-updated">
+    <strong>Last Updated:</strong> June 21, 2025
+  </div>
+
+  <div class="privacy-highlights">
+    <h3>🛡️ Privacy at a Glance</h3>
+    <p>We believe in transparency. Here's what you need to know:</p>
+    <div class="highlights-grid">
+      <div class="highlight-item">
+        <span class="highlight-icon">✅</span>
+        <span>No personal data selling</span>
+      </div>
+      <div class="highlight-item">
+        <span class="highlight-icon">🔒</span>
+        <span>Data encrypted in transit</span>
+      </div>
+      <div class="highlight-item">
+        <span class="highlight-icon">🎛️</span>
+        <span>You control your data</span>
+      </div>
+      <div class="highlight-item">
+        <span class="highlight-icon">📱</span>
+        <span>Minimal data collection</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="section">
+    <h2>1. Information We Collect</h2>
+    <p>We collect information to provide you with the best wallpaper experience. Here's what we gather and why:</p>
+    
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Data Type</th>
+          <th>Purpose</th>
+          <th>Required</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Email Address</td>
+          <td>Account creation, support, updates</td>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <td>Device Information</td>
+          <td>App optimization, bug fixes</td>
+          <td>Automatic</td>
+        </tr>
+        <tr>
+          <td>Usage Analytics</td>
+          <td>Improve app features</td>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <td>AI Prompts</td>
+          <td>Generate wallpapers, improve AI</td>
+          <td>When using AI</td>
+        </tr>
+        <tr>
+          <td>Download History</td>
+          <td>Personalized recommendations</td>
+          <td>Automatic</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Information You Provide</h3>
+    <ul>
+      <li><strong>Account Information:</strong> Email address when you create an account</li>
+      <li><strong>AI Prompts:</strong> Text descriptions you provide for AI wallpaper generation</li>
+      <li><strong>Feedback:</strong> Comments, ratings, and support messages</li>
+      <li><strong>Preferences:</strong> Wallpaper categories, favorites, and settings</li>
+    </ul>
+
+    <h3>Information We Collect Automatically</h3>
+    <ul>
+      <li><strong>Device Data:</strong> Device model, operating system, screen resolution</li>
+      <li><strong>Usage Data:</strong> Features used, time spent, wallpapers downloaded</li>
+      <li><strong>Technical Data:</strong> IP address, crash logs, performance metrics</li>
+      <li><strong>App Activity:</strong> Search queries, category preferences, interaction patterns</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>2. How We Use Your Information</h2>
+    <p>We use your information to enhance your Wallio experience:</p>
+    <ul>
+      <li><strong>Provide Core Services:</strong> Download wallpapers, generate AI content, sync preferences</li>
+      <li><strong>Personalization:</strong> Recommend wallpapers based on your preferences and history</li>
+      <li><strong>AI Improvement:</strong> Enhance our AI models using anonymized prompt data</li>
+      <li><strong>App Enhancement:</strong> Fix bugs, optimize performance, develop new features</li>
+      <li><strong>Customer Support:</strong> Respond to inquiries and resolve technical issues</li>
+      <li><strong>Security:</strong> Detect fraud, prevent abuse, ensure app security</li>
+      <li><strong>Communication:</strong> Send important updates, feature announcements (with your consent)</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>3. Information Sharing and Disclosure</h2>
+    <p>We respect your privacy and limit data sharing to essential services:</p>
+    
+    <h3>We May Share Information With:</h3>
+    <ul>
+      <li><strong>AI Service Providers:</strong> Third-party AI platforms that power our wallpaper generation (data is anonymized)</li>
+      <li><strong>Analytics Partners:</strong> Services like Firebase Analytics to understand app usage (aggregated data only)</li>
+      <li><strong>Cloud Storage:</strong> Secure cloud services for data backup and synchronization</li>
+      <li><strong>Payment Processors:</strong> For premium subscription handling (we don't store payment details)</li>
+      <li><strong>Legal Requirements:</strong> When required by law, court order, or to protect our rights</li>
+    </ul>
+
+    <h3>We Never:</h3>
+    <ul>
+      <li>Sell your personal information to third parties</li>
+      <li>Share your AI prompts with advertisers</li>
+      <li>Provide your email to marketing companies</li>
+      <li>Share your wallpaper preferences for advertising purposes</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>4. Data Security</h2>
+    <p>We implement industry-standard security measures to protect your information:</p>
+    <ul>
+      <li><strong>Encryption:</strong> All data transmission uses TLS/SSL encryption</li>
+      <li><strong>Secure Storage:</strong> Data stored on secure, encrypted servers</li>
+      <li><strong>Access Controls:</strong> Limited employee access with strict authentication</li>
+      <li><strong>Regular Audits:</strong> Ongoing security assessments and updates</li>
+      <li><strong>Incident Response:</strong> Rapid response plan for any security concerns</li>
+    </ul>
+  </section>
+
+  <div class="rights-section">
+    <h3>🎛️ Your Privacy Rights</h3>
+    <p>You have control over your personal information. Here are your rights:</p>
+    <div class="rights-grid">
+      <div class="right-item">
+        <h4>Access</h4>
+        <p>Request a copy of your personal data we have collected</p>
+      </div>
+      <div class="right-item">
+        <h4>Correction</h4>
+        <p>Update or correct any inaccurate personal information</p>
+      </div>
+      <div class="right-item">
+        <h4>Deletion</h4>
+        <p>Request deletion of your personal data (right to be forgotten)</p>
+      </div>
+      <div class="right-item">
+        <h4>Portability</h4>
+        <p>Export your data in a commonly used format</p>
+      </div>
+      <div class="right-item">
+        <h4>Opt-Out</h4>
+        <p>Withdraw consent for data processing activities</p>
+      </div>
+      <div class="right-item">
+        <h4>Restrict Processing</h4>
+        <p>Limit how we use your personal information</p>
+      </div>
+    </div>
+  </div>
+
+  <section class="section">
+    <h2>6. Data Retention</h2>
+    <p>We retain your information only as long as necessary:</p>
+    <ul>
+      <li><strong>Account Data:</strong> Until you delete your account or request removal</li>
+      <li><strong>Usage Analytics:</strong> Aggregated data retained for up to 2 years</li>
+      <li><strong>AI Training Data:</strong> Anonymized prompts retained to improve AI models</li>
+      <li><strong>Support Communications:</strong> Retained for 1 year for quality assurance</li>
+      <li><strong>Legal Compliance:</strong> Some data may be retained longer if required by law</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>7. Children's Privacy</h2>
+    <p>Wallio is not intended for children under 13. We do not knowingly collect personal information from children under 13. If we discover we have collected such information, we will delete it immediately.</p>
+    <p>For users between 13-18, parental consent may be required in some jurisdictions.</p>
+  </section>
+
+  <section class="section">
+    <h2>8. International Data Transfers</h2>
+    <p>Your information may be transferred to and processed in countries other than your own. We ensure adequate protection through:</p>
+    <ul>
+      <li>Standard contractual clauses approved by regulatory authorities</li>
+      <li>Adequacy decisions for data transfer to certain countries</li>
+      <li>Your explicit consent where required</li>
+      <li>Robust security measures regardless of location</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>9. Cookies and Tracking</h2>
+    <p>Wallio uses minimal tracking technologies:</p>
+    <ul>
+      <li><strong>Essential Cookies:</strong> Required for app functionality (login status, preferences)</li>
+      <li><strong>Analytics:</strong> Anonymous usage statistics to improve the app</li>
+      <li><strong>No Advertising Cookies:</strong> We don't use cookies for advertising purposes</li>
+    </ul>
+    <p>You can manage cookie preferences through your device settings.</p>
+  </section>
+
+  <section class="section">
+    <h2>10. Third-Party Services</h2>
+    <p>Wallio integrates with select third-party services:</p>
+    <ul>
+      <li><strong>App Stores:</strong> Apple App Store, Google Play Store (for downloads and payments)</li>
+      <li><strong>AI Providers:</strong> For wallpaper generation capabilities</li>
+      <li><strong>Analytics:</strong> Firebase Analytics for app improvement</li>
+      <li><strong>Cloud Storage:</strong> For secure data backup and sync</li>
+    </ul>
+    <p>These services have their own privacy policies, which we encourage you to review.</p>
+  </section>
+
+  <section class="section">
+    <h2>11. Changes to This Privacy Policy</h2>
+    <p>We may update this Privacy Policy to reflect changes in our practices or applicable laws. When we do:</p>
+    <ul>
+      <li>We'll post the updated policy in the app with a new "Last Updated" date</li>
+      <li>For significant changes, we'll notify you via email or in-app notification</li>
+      <li>Your continued use of Wallio constitutes acceptance of the updated policy</li>
+      <li>You can always review the current policy in the app settings</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>12. Contact Information</h2>
+    <p>Our Data Protection Officer and privacy team are here to help with any questions or concerns about your privacy.</p>
+  </section>
+
+  <div class="contact-info">
+    <h3>Privacy Questions or Concerns?</h3>
+    <p>We're here to help with any privacy-related questions:</p>
+    <p><strong>Email:</strong> <a href="mailto:support@walliowallpapers.com">support@walliowallpapers.com</a></p>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="/terms">Terms of Use</a>
+    <a href="mailto:support@walliowallpapers.com">Contact Support</a>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Wallio. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
